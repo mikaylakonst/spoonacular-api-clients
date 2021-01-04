@@ -18,9 +18,11 @@ class ApiClient {
   final _regList = RegExp(r'^List<(.*)>$');
   final _regMap = RegExp(r'^Map<String,(.*)>$');
 
-  ApiClient({this.basePath = "https://api.spoonacular.com"}) {
+  ApiClient({this.basePath = "https://api.spoonacular.com", apiKey}) {
     // Setup authentications (key: authentication name, value: authentication).
-    _authentications['apiKeyScheme'] = ApiKeyAuth("query", "api_key");
+    var apiKeyAuth = ApiKeyAuth("query", "api_key");
+    apiKeyAuth.apiKey = apiKey;
+    _authentications['apiKeyScheme'] = apiKeyAuth;
   }
 
   void addDefaultHeader(String key, String value) {
