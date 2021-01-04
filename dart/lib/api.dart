@@ -25,7 +25,7 @@ part 'model/inline_object15.dart';
 part 'model/inline_object16.dart';
 part 'model/inline_object2.dart';
 part 'model/inline_object3.dart';
-part 'model/inline_object4.dart';
+part 'model/recipe.dart';
 part 'model/inline_object5.dart';
 part 'model/inline_object6.dart';
 part 'model/inline_object7.dart';
