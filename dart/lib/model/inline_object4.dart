@@ -42,7 +42,7 @@ class InlineObject4 {
     if (json['image'] == null) {
       image = null;
     } else {
-      image = new File.fromJson(json['image']);
+      image = new File.fromUri(json['image']);
     }
     if (json['ingredients'] == null) {
       ingredients = null;
