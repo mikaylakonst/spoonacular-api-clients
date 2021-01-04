@@ -20,7 +20,7 @@ class ApiClient {
 
   ApiClient({this.basePath = "https://api.spoonacular.com", String apiKey}) {
     // Setup authentications (key: authentication name, value: authentication).
-    var apiKeyAuth = ApiKeyAuth("query", "api_key");
+    var apiKeyAuth = ApiKeyAuth("query", "apiKey");
     apiKeyAuth.apiKey = apiKey;
     _authentications['apiKeyScheme'] = apiKeyAuth;
   }
