@@ -2083,7 +2083,9 @@ class DefaultApi {
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, _decodeBodyBytes(response));
     } else if(response.body != null) {
-      return apiClient.deserialize(_decodeBodyBytes(response), 'List<Recipe>') as List<Recipe>;
+      var response_json = jsonDecode(_decodeBodyBytes(response));
+      var list_json = response_json['recipes'];
+      return apiClient.deserialize(list_json, 'List<Recipe>') as List<Recipe>;
     } else {
       return null;
     }

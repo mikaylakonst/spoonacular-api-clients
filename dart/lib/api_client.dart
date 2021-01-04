@@ -95,13 +95,12 @@ class ApiClient {
     throw ApiException(500, 'Could not find a suitable class for deserialization');
   }
 
-  dynamic deserialize(String json, String targetType) {
+  dynamic deserialize(Object decodedJson, String targetType) {
     // Remove all spaces.  Necessary for reg expressions as well.
     targetType = targetType.replaceAll(' ', '');
 
     if (targetType == 'String') return json;
 
-    var decodedJson = jsonDecode(json);
     return _deserialize(decodedJson, targetType);
   }
 
