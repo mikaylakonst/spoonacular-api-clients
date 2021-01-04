@@ -2085,7 +2085,9 @@ class DefaultApi {
     } else if(response.body != null) {
       var response_json = jsonDecode(_decodeBodyBytes(response));
       var list_json = response_json['recipes'];
-      return apiClient.deserialize(list_json, 'List<Recipe>').map((r) => r as Recipe).toList();
+      List<dynamic> dynList = apiClient.deserialize(list_json, 'List<Recipe>');
+      List<Recipe> recipeList = new List<Recipe>.from(dynList.whereType<Recipe>());
+      return recipeList;
     } else {
       return null;
     }
