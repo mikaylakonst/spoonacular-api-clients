@@ -2085,7 +2085,7 @@ class DefaultApi {
     } else if(response.body != null) {
       var response_json = jsonDecode(_decodeBodyBytes(response));
       var list_json = response_json['recipes'];
-      return apiClient.deserialize(list_json, 'List<Recipe>') as List<Recipe>;
+      return apiClient.deserialize(list_json, 'List<Recipe>').Cast<Recipe>().toList();
     } else {
       return null;
     }
