@@ -3,8 +3,8 @@ part of openapi.api;
 class InlineObject4 {
   /* The title of the recipe. */
   String title = null;
-  /* The binary image of the recipe as jpg. */
-  MultipartFile image = null;
+  /* The https path to the image of the recipe as jpg. */
+  String image = null;
   /* The ingredient list of the recipe, one ingredient per line (separate lines with \\n). */
   String ingredients = null;
   /* The instructions to make the recipe. One step per line (separate lines with \\n). */
@@ -42,7 +42,7 @@ class InlineObject4 {
     if (json['image'] == null) {
       image = null;
     } else {
-      image = new MultipartFile.fromBytes('file', await File.fromUri(Uri.parse(json['image'])).readAsBytes(), contentType: new MediaType('image', 'jpeg'));
+      image = json['image'];
     }
     if (json['ingredients'] == null) {
       ingredients = null;
