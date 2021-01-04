@@ -18,7 +18,7 @@ class ApiClient {
   final _regList = RegExp(r'^List<(.*)>$');
   final _regMap = RegExp(r'^Map<String,(.*)>$');
 
-  ApiClient({this.basePath = "https://api.spoonacular.com", apiKey}) {
+  ApiClient({this.basePath = "https://api.spoonacular.com", String apiKey}) {
     // Setup authentications (key: authentication name, value: authentication).
     var apiKeyAuth = ApiKeyAuth("query", "api_key");
     apiKeyAuth.apiKey = apiKey;
