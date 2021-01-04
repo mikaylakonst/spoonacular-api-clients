@@ -1,6 +1,6 @@
 part of openapi.api;
 
-class InlineObject4 {
+class Recipe {
   /* The title of the recipe. */
   String title = null;
   /* The https path to the image of the recipe as jpg. */
@@ -25,14 +25,14 @@ class InlineObject4 {
   String fontColor = null;
   /* The source of the recipe. */
   String source = null;
-  InlineObject4();
+  Recipe();
 
   @override
   String toString() {
-    return 'InlineObject4[title=$title, image=$image, ingredients=$ingredients, instructions=$instructions, readyInMinutes=$readyInMinutes, servings=$servings, mask=$mask, backgroundImage=$backgroundImage, author=$author, backgroundColor=$backgroundColor, fontColor=$fontColor, source=$source, ]';
+    return 'Recipe[title=$title, image=$image, ingredients=$ingredients, instructions=$instructions, readyInMinutes=$readyInMinutes, servings=$servings, mask=$mask, backgroundImage=$backgroundImage, author=$author, backgroundColor=$backgroundColor, fontColor=$fontColor, source=$source, ]';
   }
 
-  InlineObject4.fromJson(Map<String, dynamic> json) {
+  Recipe.fromJson(Map<String, dynamic> json) {
     if (json == null) return;
     if (json['title'] == null) {
       title = null;
@@ -125,14 +125,14 @@ class InlineObject4 {
     return json;
   }
 
-  static List<InlineObject4> listFromJson(List<dynamic> json) {
-    return json == null ? new List<InlineObject4>() : json.map((value) => new InlineObject4.fromJson(value)).toList();
+  static List<Recipe> listFromJson(List<dynamic> json) {
+    return json == null ? new List<Recipe>() : json.map((value) => new Recipe.fromJson(value)).toList();
   }
 
-  static Map<String, InlineObject4> mapFromJson(Map<String, dynamic> json) {
-    var map = new Map<String, InlineObject4>();
+  static Map<String, Recipe> mapFromJson(Map<String, dynamic> json) {
+    var map = new Map<String, Recipe>();
     if (json != null && json.isNotEmpty) {
-      json.forEach((String key, dynamic value) => map[key] = new InlineObject4.fromJson(value));
+      json.forEach((String key, dynamic value) => map[key] = new Recipe.fromJson(value));
     }
     return map;
   }

@@ -2036,7 +2036,7 @@ class DefaultApi {
   /// Get Random Recipes
   ///
   /// Find random (popular) recipes. If you need to filter recipes by diet, nutrition etc. you might want to consider using the complex recipe search endpoint and set the sort request parameter to random.
-  Future<Object> getRandomRecipes({ bool limitLicense, String tags, num number }) async {
+  Future<List<Recipe>> getRandomRecipes({ bool limitLicense, String tags, num number }) async {
     Object postBody;
 
     // verify required params are set
@@ -2083,7 +2083,7 @@ class DefaultApi {
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, _decodeBodyBytes(response));
     } else if(response.body != null) {
-      return apiClient.deserialize(_decodeBodyBytes(response), 'Object') as Object;
+      return apiClient.deserialize(_decodeBodyBytes(response), 'List<Recipe>') as List<Recipe>;
     } else {
       return null;
     }
