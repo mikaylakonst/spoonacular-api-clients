@@ -42,7 +42,7 @@ class InlineObject4 {
     if (json['image'] == null) {
       image = null;
     } else {
-      image = new File.fromUri(Uri.parse(json['image']));
+      image = new MultipartFile.fromBytes('file', await File.fromUri(Uri.parse(json['image'])).readAsBytes(), contentType: new MediaType('image', 'jpeg'));
     }
     if (json['ingredients'] == null) {
       ingredients = null;
