@@ -32,7 +32,7 @@ class InlineObject4 {
     return 'InlineObject4[title=$title, image=$image, ingredients=$ingredients, instructions=$instructions, readyInMinutes=$readyInMinutes, servings=$servings, mask=$mask, backgroundImage=$backgroundImage, author=$author, backgroundColor=$backgroundColor, fontColor=$fontColor, source=$source, ]';
   }
 
-  InlineObject4.fromJson(Map<String, dynamic> json) {
+  InlineObject4.fromJson(Map<String, dynamic> json) async {
     if (json == null) return;
     if (json['title'] == null) {
       title = null;
